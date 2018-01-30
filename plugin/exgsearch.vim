@@ -35,7 +35,7 @@ endif
 command! -n=1 -complete=customlist,ex#compl_by_symbol GS call exgsearch#search('<args>', '-s')
 command! -n=1 -complete=customlist,ex#compl_by_symbol GSW call exgsearch#search('<args>', '-w')
 command! -n=1 -complete=customlist,ex#compl_by_symbol GSR call exgsearch#search('<args>', '-r')
-command! EXGSearchCWord call exgsearch#search(expand('<cword>'), '-s')
+command! EXGSearchCWord call exgsearch#search(expand('<cword>'), '-w')
 
 command! EXGSearchToggle call exgsearch#toggle_window()
 command! EXGSearchOpen call exgsearch#open_window()

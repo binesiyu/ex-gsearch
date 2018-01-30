@@ -54,7 +54,8 @@ endfunction
 function exgsearch#init_buffer()
     set filetype=exgsearch
     augroup exgsearch
-        au! BufWinLeave <buffer> call <SID>on_close()
+        " au! BufWinLeave <buffer> call <SID>on_close()
+        au! WinLeave <buffer> call <SID>on_close()
     augroup END
 
     if line('$') <= 1 && g:ex_gsearch_enable_help
@@ -85,7 +86,7 @@ function exgsearch#open_window()
                     \ s:title, 
                     \ g:ex_gsearch_winsize,
                     \ g:ex_gsearch_winpos,
-                    \ 1,
+                    \ 0,
                     \ 1,
                     \ function('exgsearch#init_buffer')
                     \ )
